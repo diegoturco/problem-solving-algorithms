@@ -43,7 +43,6 @@ describe("symmetric three", () => {
 
     nodeL2.right = nodeR3;
   
-    // Improve this name?
     nodeR2.right = nodeRR4;
     
     console.log(rootNode);    
