@@ -23,8 +23,6 @@ describe("symmetric three", () => {
     nodeR2.left = nodeL4;
     nodeR2.right = nodeR3;
     
-    console.log(rootNode);    
-
     expect(IsSymmetricThree(rootNode)).toEqual(true);
   });
 
@@ -36,17 +34,13 @@ describe("symmetric three", () => {
     
     const nodeR3 = new TreeNode(3);    
 
-    const nodeRR4 = new TreeNode(3);    
-
     rootNode.left = nodeL2;
     rootNode.right = nodeR2;
 
     nodeL2.right = nodeR3;
   
-    nodeR2.right = nodeRR4;
+    nodeR2.right = nodeR3;
     
-    console.log(rootNode);    
-
     expect(IsSymmetricThree(rootNode)).toEqual(false);
   });
 });
