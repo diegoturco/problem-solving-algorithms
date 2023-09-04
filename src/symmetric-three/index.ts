@@ -2,27 +2,32 @@ import TreeNode from "./tree-node";
 
 function isMirror(
   name: string,
-  st1: TreeNode | null,
-  st2: TreeNode | null
+  subTree1: TreeNode | null,
+  subTree2: TreeNode | null
 ): boolean {
-  console.log(`${name}\nst1: ${st1?.val}\nst2: ${st2?.val}`);
+  console.log(`${name}\nsubTree1: ${subTree1?.val}\nsubTree2: ${subTree2?.val}`);
 
-  if (st1 === null && st2 === null) {
+  if (subTree1 === null && subTree2 === null) {
     return true;
   }
 
-  if (st1 === null || st2 === null) {
+  if (subTree1 === null || subTree2 === null) {
     return false;
   }
 
   return (
-    st1.val === st2.val &&
-    isMirror("left-side", st1.left, st2.right) &&
-    isMirror("right-side", st1.right, st2.left)
+    subTree1.val === subTree2.val &&
+    isMirror("left-side", subTree1.left, subTree2.right) &&
+    isMirror("right-side", subTree1.right, subTree2.left)
   );
 }
 
 function IsSymmetricThree(root: TreeNode | null): boolean {
+
+  if (root === null) {
+    return true;
+  }
+
   return isMirror("root", root, root);
 }
 
