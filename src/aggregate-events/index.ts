@@ -1,9 +1,9 @@
-type Events = {
+type Event = {
   id: number;
   name: string;
 };
 
-function aggregateEvents(events: Events[]) {
+function aggregateEvents(events: Event[]) {
   const result = events.reduce((accumulator: any, currentValue) => {
     const { name } = currentValue;
     accumulator[name] = (accumulator[name] || 0) + 1;
