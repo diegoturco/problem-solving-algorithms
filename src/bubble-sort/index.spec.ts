@@ -1,6 +1,6 @@
 import bubbleSort from ".";
 
-describe("two sum", () => {
+describe("bubble sort", () => {
   it("case 1", () => {
     const nums = [5, 4, 3, 2, 1];
     expect(bubbleSort(nums)).toEqual([1, 2, 3, 4, 5]);
